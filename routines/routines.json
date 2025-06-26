@@ -1,0 +1,20 @@
+[
+  {
+    "text": "Ear training using major scales",
+    "category": "daily",
+    "tags": ["ear training", "scales"],
+    "state": "not_completed"
+  },
+  {
+    "text": "Learn 3-note per string pentatonic shapes",
+    "category": "one_day",
+    "tags": ["pentatonic", "technique"],
+    "state": "not_completed"
+  },
+  {
+    "text": "Improvise over a chord chart from Justin's Jam Vols PDF",
+    "category": "two_three_days",
+    "tags": ["improv", "jamming"],
+    "state": "not_completed"
+  }
+]
