@@ -25,7 +25,6 @@ def mark_routine_completed(routine_id, collection, completed_state="completed"):
     # Step 3: Add it back with updated metadata
     meta["state"] = completed_state
 
-    from openai import OpenAI
     openai_client = OpenAI()
     response = openai_client.embeddings.create(
         input=[doc],
