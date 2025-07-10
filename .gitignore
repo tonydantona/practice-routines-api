@@ -11,4 +11,5 @@ env/
 *.db
 *.bin
 *.sqlite3
+.env
 
