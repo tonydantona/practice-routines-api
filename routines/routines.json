@@ -1,20 +1,321 @@
 [
   {
-    "text": "Ear training using major scales",
+    "text": "Practice major scales",
     "category": "daily",
-    "tags": ["ear training", "scales"],
+    "tags": [
+      "scales",
+      "technique"
+    ],
     "state": "not_completed"
   },
   {
-    "text": "Learn 3-note per string pentatonic shapes",
+    "text": "master vibrato: all types and speeds",
+    "category": "daily",
+    "tags": [
+      "technique"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "target notes, roots only then simple pent licks",
     "category": "one_day",
-    "tags": ["pentatonic", "technique"],
+    "tags": [
+      "improv"
+    ],
     "state": "not_completed"
   },
   {
-    "text": "Improvise over a chord chart from Justin's Jam Vols PDF",
+    "text": "mix licks with harmony, chords, triads, scales",
+    "category": "one_day",
+    "tags": [
+      "improvising"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "triads, all string version, chord progression, maj & min",
+    "category": "daily",
+    "tags": [
+      "ear training",
+      "fretboard"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "improvise over backing track",
+    "category": "daily",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "improvise with moises",
+    "category": "daily",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "review a blim video, work on it",
     "category": "two_three_days",
-    "tags": ["improv", "jamming"],
+    "tags": [
+      "technique"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "film yourself playing",
+    "category": "one_day",
+    "tags": [
+      "technique"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "ear train, sing: full scale, pents, arpegg triads through scale (Jens)",
+    "category": "daily",
+    "tags": [
+      "ear training"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "perfect bends, listen then prebend-reset-bend, also bend the scale",
+    "category": "daily",
+    "tags": [
+      "technique"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "string explorer, different key, do it to triplets, eighths and rhythms",
+    "category": "daily",
+    "tags": [
+      "technique"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "record yourself, check for legato sound",
+    "category": "daily",
+    "tags": [
+      "technique"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "blues you can use, re-learn a piece or some licks",
+    "category": "two_three_days",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "improvise over justin's jam vols, reference chord chart and notes",
+    "category": "one_day",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "practice - learn turnarounds, work them into improv",
+    "category": "one_day",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "play over changes",
+    "category": "one_day",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "blim licks, revisit a unit, play over medley",
+    "category": "one_day",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "chord voicings, review 7,11,13,4,6,9. Joe D shell and binder",
+    "category": "two_three_days",
+    "tags": [
+      "rhythm"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "justin's chord charts, dom 7th diagram (blim U3)",
+    "category": "one_day",
+    "tags": [
+      "rhythm"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "practice pet licks, play over backing track",
+    "category": "one_day",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "check timing on licks, record, listen",
+    "category": "one_day",
+    "tags": [
+      "timing"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "rhythm practice, play along with a simple progression, shuffle, record it, match up timing",
+    "category": "one_day",
+    "tags": [
+      "timing"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "keith wyatt 12 bar blues shuffle, all keys",
+    "category": "one_day",
+    "tags": [
+      "rhythm",
+      "technique"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "blend Pent scale frameworks - pick 2 patterns blend licks, transitions, note functions etc.",
+    "category": "one_day",
+    "tags": [
+      "pentatonic"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "BYCU - revisit one lesson",
+    "category": "two_three_days",
+    "tags": [
+      "repertoire",
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "transcribe a short lick from a song. incorporate it into pet licks.",
+    "category": "two_three_days",
+    "tags": [
+      "transcribe"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "Greg Koch blues book. revisit a lesson or learn a new song",
+    "category": "two_three_days",
+    "tags": [
+      "repertoire"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "take known licks and categorize for I, IV, V chords",
+    "category": "two_three_days",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "make a chart or list of what licks to avoid over certain chords",
+    "category": "two_three_days",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "threads",
+    "category": "two_three_days",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "take a pet lick: change fingering, play it backwards, play it in other pents, change dynamics, change rhythm",
+    "category": "two_three_days",
+    "tags": [
+      "improvise"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "play over songs (not backing tracks)",
+    "category": "one_day",
+    "tags": [
+      "improvise",
+      "ear training"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "listen and recognize chord changes (backing trks, blim playlist, any songs)",
+    "category": "two_three_days",
+    "tags": [
+      "ear traning"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "complete book of electric blues, learn or revisit one song",
+    "category": "two_three_days",
+    "tags": [
+      "repertoire",
+      "rhythm"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "add a favorite song to your repertoire",
+    "category": "one_week",
+    "tags": [
+      "repertoire"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "study a solo (hey joe, blues for TJ etc.)",
+    "category": "one_week",
+    "tags": [
+      "transcribe",
+      "ear training"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "do your own arrangement of a song",
+    "category": "one_week",
+    "tags": [
+      "repertoire"
+    ],
+    "state": "not_completed"
+  },
+  {
+    "text": "chord melody: revisit or learn a new piece",
+    "category": "one_week",
+    "tags": [
+      "repertoire"
+    ],
     "state": "not_completed"
   }
 ]

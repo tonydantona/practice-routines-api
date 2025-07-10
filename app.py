@@ -7,14 +7,17 @@ app = Flask(__name__)
 #CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000"]}})
 CORS(app)
 
-@app.route("/api/random-routine", methods=["GET"])
+@app.route("/api/get-random-routine-by-category-state", methods=["GET"])
 def get_random_routine():
     category = request.args.get("category")
     # set up the default state with "not_completed
     state = request.args.get("state", "not_completed")
     if not category:
         return jsonify({"message": "Category parameter is required."}), 400
-    results = search_by_category(category, state)
+    
+    # If state is "all", pass None to search_by_category to get all states
+    search_state = None if state == "all" else state
+    results = search_by_category(category, search_state)
     routines = results.get("documents", [])
     if not routines:
         return jsonify({"message": "No routines found for this category and state."}), 404
