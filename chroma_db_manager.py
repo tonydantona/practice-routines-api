@@ -26,7 +26,7 @@ if not os.environ["OPENAI_API_KEY"]:
 openai_client = OpenAI()
 
 # Set up ChromaDB 
-client = chromadb.PersistentClient(path="chroma_data")
+client = chromadb.PersistentClient(path="../data/chroma_data")
 
  # my practice routines
 routines = load_routines_from_file("routines/routines.json")

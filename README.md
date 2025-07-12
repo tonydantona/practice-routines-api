@@ -38,18 +38,21 @@ vectorDb-demo/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd vectorDb-demo
    ```
 
 2. **Install dependencies**
+
    ```bash
    pip install flask flask-cors chromadb openai python-dotenv
    ```
 
 3. **Set up environment variables**
    Create a `.env` file in the project root:
+
    ```
    OPENAI_API_KEY=your_openai_api_key_here
    ```
@@ -80,6 +83,7 @@ python chroma_db_manager.py
 ```
 
 This launches an interactive menu with the following options:
+
 - `0` - Build/rebuild database
 - `1` - Get all practice routines
 - `2` - Search routines by category
@@ -95,15 +99,18 @@ This launches an interactive menu with the following options:
 Returns a random practice routine from the specified category.
 
 **Parameters:**
+
 - `category` (required): Filter by category (`daily`, `one_day`, `two_three_days`)
 - `state` (optional): Filter by completion state (default: `not_completed`)
 
 **Example:**
+
 ```bash
 curl "http://localhost:5050/api/random-routine?category=daily"
 ```
 
 **Response:**
+
 ```json
 {
   "message": "Ear training using major scales"
@@ -111,6 +118,7 @@ curl "http://localhost:5050/api/random-routine?category=daily"
 ```
 
 **Error Responses:**
+
 - `400`: Missing category parameter
 - `404`: No routines found for the specified category/state
 
@@ -129,7 +137,7 @@ Practice routines are stored in `routines/routines.json` with the following stru
 
 ## Database Storage
 
-- **ChromaDB**: Persistent storage in `chroma_data/` directory
+- **ChromaDB**: Persistent storage in `../data/chroma_data/` directory
 - **Collection**: `guitar_routines`
 - **Embeddings**: Generated using OpenAI's text embedding models
 - **Metadata**: Category, tags, and completion state for filtering
@@ -165,10 +173,12 @@ print(f'Found {len(results[\"documents\"])} routines')
 ## Port Information
 
 This application runs on **port 5050** to avoid conflicts with:
+
 - Apple's AirPlay Receiver (port 5000)
 - Other common development services
 
 If you need to change the port, modify line 27 in `app.py`:
+
 ```python
 app.run(debug=True, port=5050)  # Change 5050 to your desired port
 ```
