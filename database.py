@@ -5,22 +5,14 @@ This module provides singleton access to ChromaDB and OpenAI clients,
 ensuring they are initialized only once per Python process.
 """
 
-import os
 import chromadb
 from openai import OpenAI
-from dotenv import load_dotenv
+from config import settings
 
-# Load environment variables once
-load_dotenv()
-
-# Validate API key
-if not os.getenv("OPENAI_API_KEY"):
-    raise ValueError("OpenAI API key not found. Make sure it's in your .env file.")
-
-# Configuration constants
-DB_PATH = "../data/chroma_data"
-COLLECTION_NAME = "guitar_routines"
-EMBEDDING_MODEL = "text-embedding-3-small"
+# Export constants for backward compatibility
+DB_PATH = settings.DB_PATH
+COLLECTION_NAME = settings.COLLECTION_NAME
+EMBEDDING_MODEL = settings.EMBEDDING_MODEL
 
 # Module-level singletons (created once on first import)
 _chroma_client = None

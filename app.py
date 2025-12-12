@@ -1,11 +1,18 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from search_by_category import search_by_category
+from config import settings
 import random
 
 app = Flask(__name__)
-#CORS(app, resources={r"/api/*": {"origins": ["http://localhost:3000"]}})
-CORS(app)
+
+# Configure CORS based on settings
+if settings.CORS_ORIGINS == "*":
+    CORS(app)
+else:
+    # Parse comma-separated origins if provided
+    origins = [origin.strip() for origin in settings.CORS_ORIGINS.split(",")]
+    CORS(app, resources={r"/api/*": {"origins": origins}})
 
 @app.route("/api/get-random-routine-by-category-state", methods=["GET"])
 def get_random_routine():
@@ -27,4 +34,4 @@ def get_random_routine():
     return jsonify({"message": routine})
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5050)
+    app.run(debug=settings.DEBUG, host=settings.FLASK_HOST, port=settings.FLASK_PORT)
