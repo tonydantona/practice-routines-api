@@ -1,9 +1,8 @@
-import chromadb
+from database import get_collection
 
 def get_all_practice_routines():
-  # Load the persistent DB
-  client = chromadb.PersistentClient(path="../data/chroma_data")
-  collection = client.get_or_create_collection(name="guitar_routines")
+  # Get the shared collection instance
+  collection = get_collection()
 
   # Get all documents
   results = collection.get()

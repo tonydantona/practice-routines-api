@@ -1,9 +1,8 @@
-import chromadb
+from database import get_collection
 
 def search_by_category(category, state="not_completed"):
-  # Load the persistent DB
-  client = chromadb.PersistentClient(path="../data/chroma_data")
-  collection = client.get_or_create_collection(name="guitar_routines")
+  # Get the shared collection instance
+  collection = get_collection()
 
   # Build filter based on whether state is provided
   if state is None:

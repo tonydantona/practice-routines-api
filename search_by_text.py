@@ -1,26 +1,30 @@
-import os
-import chromadb
-from openai import OpenAI
+from database import get_collection, get_openai_client, EMBEDDING_MODEL
 
 # •	For semantic searches using natural language (like "scales" or "improvise over chords")
 # •	Uses OpenAI embeddings and Chroma similarity
 # •	Optional: filters weak matches using score threshold (min_score)
-# •	Doesn’t use metadata filtering like category or tags
+# •	Doesn't use metadata filtering like category or tags
 
-def search_routines(query, collection, openai_client, top_n=5, min_score=0.3):
+def search_routines(query, collection=None, openai_client=None, top_n=5, min_score=0.3):
     """
     Search routines using a semantic query.
-    
+
     Args:
         query (str): The search text (e.g., "scales", "jamming").
-        collection: Chroma collection to query.
-        openai_client: OpenAI API client.
+        collection: Chroma collection to query (defaults to shared instance).
+        openai_client: OpenAI API client (defaults to shared instance).
         top_n (int): Max results to return.
         min_score (float): Max distance allowed (lower is more similar).
     """
+    # Use shared instances if not provided
+    if collection is None:
+        collection = get_collection()
+    if openai_client is None:
+        openai_client = get_openai_client()
+
     response = openai_client.embeddings.create(
         input=[query],
-        model="text-embedding-3-small"
+        model=EMBEDDING_MODEL
     )
     query_embedding = response.data[0].embedding
 

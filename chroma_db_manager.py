@@ -1,37 +1,18 @@
-import os
-import chromadb
-from openai import OpenAI
-from dotenv import load_dotenv
-
+from database import get_collection, get_openai_client
 from build_chroma_db import build_db
 from search_by_category import search_by_category
 from search_by_text import search_routines
 from get_all_routines import get_all_practice_routines
 from mark_routine_completed import mark_routine_completed
 from get_not_completed_routines import get_not_completed_routines
-
 from utils import load_routines_from_file, display_results, display_search_text_results
 
-# This line loads the variables from your .env file
-load_dotenv()
+# Get shared instances from database module
+openai_client = get_openai_client()
+collection = get_collection()
 
-# This line gets the API key from the environment variables
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
-
-if not os.environ["OPENAI_API_KEY"]:
-    raise ValueError("OpenAI API key not found. Make sure it's in your .env file.")
-
-
-# Initialize OpenAI clien
-openai_client = OpenAI()
-
-# Set up ChromaDB 
-client = chromadb.PersistentClient(path="../data/chroma_data")
-
- # my practice routines
+# Load practice routines
 routines = load_routines_from_file("routines/routines.json")
-
-collection = client.get_or_create_collection(name="guitar_routines")
 
 # build_db(openai_client, collection, routines)
 # results = search_by_category("daily")

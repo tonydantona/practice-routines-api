@@ -1,14 +1,13 @@
-import chromadb
-import os
-from openai import OpenAI
+from database import get_openai_client, EMBEDDING_MODEL
 
 def mark_routine_completed(routine_id, collection, completed_state="completed"):
     """
     Marks a routine as completed by updating its 'state' metadata.
-    
+
     Args:
         routine_id (str): The UUID of the routine to update.
         collection: The Chroma collection where the routine is stored.
+        completed_state (str): The state to set (default: "completed").
     """
     # Step 1: Get the current document
     results = collection.get(ids=[routine_id])
@@ -25,10 +24,12 @@ def mark_routine_completed(routine_id, collection, completed_state="completed"):
     # Step 3: Add it back with updated metadata
     meta["state"] = completed_state
 
-    openai_client = OpenAI()
+    # TODO: This is inefficient - ChromaDB supports updating metadata directly
+    # without regenerating embeddings. Should use collection.update() instead.
+    openai_client = get_openai_client()
     response = openai_client.embeddings.create(
         input=[doc],
-        model="text-embedding-3-small"
+        model=EMBEDDING_MODEL
     )
     new_embedding = response.data[0].embedding
 

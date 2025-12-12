@@ -1,5 +1,5 @@
-from openai import OpenAI
 import uuid
+from database import EMBEDDING_MODEL
 
 def build_db(openai_client, collection, routines, force=False):
 
@@ -18,7 +18,7 @@ def build_db(openai_client, collection, routines, force=False):
   def embed(texts):
       response = openai_client.embeddings.create(
           input=texts,
-          model="text-embedding-3-small"
+          model=EMBEDDING_MODEL
       )
       return [item.embedding for item in response.data]
 
