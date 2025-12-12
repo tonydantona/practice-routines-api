@@ -1,3 +1,10 @@
+"""
+Command-line interface for the Practice Routines API.
+
+This module provides an interactive menu for managing guitar practice routines,
+including database building, searching, and updating routine states.
+"""
+
 from database import get_collection, get_openai_client
 from build_chroma_db import build_db
 from search_by_category import search_by_category
@@ -6,25 +13,20 @@ from get_all_routines import get_all_practice_routines
 from mark_routine_completed import mark_routine_completed
 from get_not_completed_routines import get_not_completed_routines
 from utils import load_routines_from_file, display_results, display_search_text_results
+from config import settings
 
-# Get shared instances from database module
-openai_client = get_openai_client()
-collection = get_collection()
-
-# Load practice routines
-routines = load_routines_from_file("routines/routines.json")
-
-# build_db(openai_client, collection, routines)
-# results = search_by_category("daily")
-
-
-# Example search
-query = "pentatonic"
-top_n=5
-min_score=1.0
-# text_search_results = search_routines(query, collection, openai_client, top_n, min_score)
 
 def menu():
+    """Interactive CLI menu for managing practice routines."""
+    # Initialize database connections and load routines
+    openai_client = get_openai_client()
+    collection = get_collection()
+    routines = load_routines_from_file(settings.ROUTINES_FILE)
+
+    # Default search parameters
+    top_n = 5
+    min_score = 1.0
+
     while True:
         print("\n--- Virtual Jar Menu ---")
         print("0. Build database")
@@ -74,36 +76,5 @@ def menu():
             print("Invalid choice. Try again.")
 
 
-# def display_results(results):
-#     print("\nMatching routines:\n")
-#     for doc_id, doc, meta in zip(results["ids"], results["documents"], results["metadatas"]):
-#         print(f"ID      : {doc_id}")
-#         print(f"Text    : {doc}")
-#         print(f"Category: {meta.get('category')}")
-#         print(f"Tags    : {meta.get('tags')}")
-#         print(f"State   : {meta.get('state')}")
-#         print("-" * 40)
-
-# def display_search_text_results(query, results):
-#     print(f"\nTop matches for: '{query}'\n")
-
-#     if not results["documents"][0]:
-#         print("No close matches — try rewording your query.")
-#         return
-
-#     for doc_id, doc, meta, score in zip(
-#         results["ids"][0],
-#         results["documents"][0],
-#         results["metadatas"][0],
-#         results["distances"][0]
-#     ):
-#         print(f"Score   : {score:.4f}")
-#         print(f"ID      : {doc_id}")
-#         print(f"Text    : {doc}")
-#         print(f"Category: {meta.get('category')}")
-#         print(f"Tags    : {meta.get('tags')}")
-#         print("-" * 40)
-
-# Run the menu
 if __name__ == "__main__":
     menu()
