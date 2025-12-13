@@ -8,7 +8,7 @@ ensuring they are initialized only once per Python process.
 import logging
 import chromadb
 from openai import OpenAI, OpenAIError
-from config import settings
+from src.config.settings import settings
 
 # Configure logging
 logger = logging.getLogger(__name__)
